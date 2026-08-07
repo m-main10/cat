@@ -21,12 +21,12 @@ public:
     void NewThickness(float thick_new) {
         thick = thick_new;
     }
-    void forward(float fd) {
+    void Dforward(float fd) {
         Vec2d r =cn.math_line(pos,fd);
         DrawLineEx({pos.xcor(),pos.ycor()},{r.xcor(),r.ycor()},thick,cp);
     }
     void backward(float fd) {
-        forward(-fd);
+        Dforward(-fd);
     }
     Color color_ret() {
         return cp;
