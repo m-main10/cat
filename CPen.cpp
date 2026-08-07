@@ -28,6 +28,9 @@ public:
     void backward(float fd) {
         forward(-fd);
     }
-
+    Color color_ret() {
+        return cp;
+        
+    }
 
 };
