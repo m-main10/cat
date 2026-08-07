@@ -24,9 +24,9 @@ public:
     void NewThickness(float thick_new) {
         thick = thick_new;
     }
-    void forward(float fd) {
+    void Dforward(float fd) {
     }
-    void backward(float fd) {
+    void Dbackward(float fd) {
     }
     Color color_ret() {
         
