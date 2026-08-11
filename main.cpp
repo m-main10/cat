@@ -133,7 +133,7 @@ public:
     }
 
 };
-class Cat:public RawCat {
+class CatSys:public RawCat {
 public:
     Cat(float thinc =3,float x=0,float y=0,Color c=WHITE) {
         NewThickness(thinc);
