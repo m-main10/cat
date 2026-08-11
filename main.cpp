@@ -135,13 +135,7 @@ public:
 };
 class CatSys:public RawCat {
 public:
-    Cat(float thinc =3,float x=0,float y=0,Color c=WHITE) {
-        NewThickness(thinc);
-        NewColor(c);
-        move(x,y);
-
-
-    }
+    
     void Update() {
         DrawCircle((int)xcor(),(int)ycor(),3.2f,color_ret());
     }
