@@ -1,7 +1,6 @@
 //
 // Created by Misha on 11.08.2026.
 //
-#pragma once
 #include "raylib.h"
 #include <thread>
 using namespace std;
@@ -135,7 +134,7 @@ public:
 };
 class CatSys:public RawCat {
 public:
-    Cat(float thinc =3,float x=0,float y=0,Color c=WHITE) {
+    CatSys(float thinc =3,float x=0,float y=0,Color c=WHITE) {
         NewThickness(thinc);
         NewColor(c);
         move(x,y);
@@ -146,3 +145,37 @@ public:
         DrawCircle((int)xcor(),(int)ycor(),3.2f,color_ret());
     }
 };
+
+int main() {
+    // Создаем окно
+    Screen screen(800, 600, "Cat Graphics Test");
+    
+    // Создаем объект CatSys для рисования
+    CatSys cat(3.0f, 400.0f, 300.0f, RED);
+    
+    // Устанавливаем скорость обновления
+    SetTargetFPS(60);
+    
+    // Основной цикл программы
+    while (!WindowShouldClose()) {
+        // Обновляем экран
+        screen.ScreenUpdate();
+        
+        // Рисуем квадрат
+        for (int i = 0; i < 4; i++) {
+            cat.forward(100);
+            cat.right(90);
+        }
+        
+        // Рисуем круг
+        cat.circle(20);
+        
+        // Обновляем позицию кота
+        cat.Update();
+        
+        // Выводим инструкцию
+        DrawText("Press ESC to exit", 10, 10, 20, DARKGRAY);
+    }
+    
+    return 0;
+}
